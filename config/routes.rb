@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  get 'resume/index'
-  get 'certificates/index'
-  get 'work/index'
-  get 'projects/index'
-  get 'home/index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'resume', to: 'resume#index'
+  get 'certificates', to: 'certificates#index'
+  get 'work', to: 'work#index'
+  get 'projects', to: 'projects#index'
+  root to: 'home#index'
 end
