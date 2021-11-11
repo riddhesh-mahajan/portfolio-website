@@ -1,0 +1,26 @@
+<p class="display-3 fw-bold text-center mb-5">Projects</p>
+
+<div class="row g-2">
+    <% @projects.each do |project_data| %>
+        <div class="col-3">
+            <div class="card text-dark">
+                <img class="card-img-top" src="https://cdn.icon-icons.com/icons2/2108/PNG/512/google_icon_130924.png" alt="Card image cap">
+
+                <div class="card-body">
+                    <% project_data[:tags].each do |tag| %>
+                        <span class="bg-primary badge badge-primary"><%= tag %></span>
+                    <% end %>
+
+                    <h5 class="card-title pt-3"><%= project_data[:name] %></h5>
+                    <p class="card-text text-justify"><%= project_data[:description] %></p>
+                    <a href="#" class="btn btn-primary">Live demo</a>
+                    <a href="#" class="btn btn-primary">View on Github</a>
+                </div>
+            </div>  
+        </div>
+    <% end %>
+</div>
+
+<div class="d-flex align-item-center justify-content-center col-12 pt-4">
+    <button type="button" class="btn btn-success btn-lg">View all (20 projects)</button>
+</div>
