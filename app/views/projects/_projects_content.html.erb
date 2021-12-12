@@ -1,26 +1,30 @@
 <p class="display-3 fw-bold text-center mb-5">Projects</p>
 
-<div class="row g-2">
+<div class="row g-3">
     <% @projects.each do |project_data| %>
-        <div class="col-3">
-            <div class="card text-dark">
-                <img class="card-img-top" src="https://cdn.icon-icons.com/icons2/2108/PNG/512/google_icon_130924.png" alt="Card image cap">
+        <div class="col-4">
+            <div class="card shadow-sm text-dark h-100">
+                <div class="card-img-top d-flex align-item-center justify-content-center" style="min-height: 10rem; max-height: 10rem;">
+                    <img class="col-3 m-4" src="<%= project_data[:logo_link] %>" alt="Card image cap">
+                </div>
+                
+                <div class="card-body d-flex flex-column">
+                    <div style="min-height: 25%;">
+                        <% project_data[:tags].each do |tag| %>
+                            <span class="<%= tag[:name] %> <%= tag[:color] %> p-2 badge badge-primary mb-2"><%= tag[:name] %></span>
+                        <% end %>
+                    </div>
+                    
+                    <h5 class="card-title pt-3 fw-bold"><%= project_data[:name] %></h5>
+                    <p class="card-text text-justify flex-fill"><%= project_data[:description] %></p>
 
-                <div class="card-body">
-                    <% project_data[:tags].each do |tag| %>
-                        <span class="bg-primary badge badge-primary"><%= tag %></span>
-                    <% end %>
-
-                    <h5 class="card-title pt-3"><%= project_data[:name] %></h5>
-                    <p class="card-text text-justify"><%= project_data[:description] %></p>
-                    <a href="#" class="btn btn-primary">Live demo</a>
-                    <a href="#" class="btn btn-primary">View on Github</a>
+                    <div class="mb-0">
+                        <% project_data[:linkes].each do |link_data| %>
+                            <a href="<%= link_data[:link] %>" target="_blank" class="btn btn-primary"><%= link_data[:name] %></a>
+                        <% end %>
+                    </div>
                 </div>
             </div>  
         </div>
     <% end %>
-</div>
-
-<div class="d-flex align-item-center justify-content-center col-12 pt-4">
-    <button type="button" class="btn btn-success btn-lg">View all (20 projects)</button>
 </div>
