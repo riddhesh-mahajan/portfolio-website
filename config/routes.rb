@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'skill', to: 'skill#index'
   get 'about', to: 'about#index'
   get 'resume', to: 'resume#index'
   get 'certificates', to: 'certificates#index'
