@@ -2,7 +2,7 @@
 
 <div class="row g-3 m-0">
     <% @projects.each do |project_data| %>
-        <div class="col-4">
+        <div class="col-md-4 col-12">
             <div class="card shadow-sm text-dark h-100">
                 <div class="card-img-top d-flex align-item-center justify-content-center" style="min-height: 10rem; max-height: 10rem;">
                     <img class="col-3 m-4" src="<%= project_data[:logo_link] %>" alt="Card image cap">
